@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/footer";
 import { SiteHeader } from "@/components/layout/header";
@@ -12,11 +11,6 @@ import {
 } from "@/lib/schema";
 
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.APP_URL),
@@ -51,7 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   ];
 
   return (
-    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
+    <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col bg-brand-bg text-brand-navy">
         <a href="#main-content" className="skip-link">
           Skip to content

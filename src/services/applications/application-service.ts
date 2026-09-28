@@ -7,7 +7,8 @@ export type ApplicationRecord = {
 };
 
 export async function listApplicationsByUser(userId: string) {
-  return [] as ApplicationRecord[];
+  const applications: ApplicationRecord[] = [];
+  return applications.filter((application) => application.userId === userId);
 }
 
 export function assertResourceOwner(resourceUserId: string, sessionUserId: string) {
